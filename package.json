@@ -1,0 +1,66 @@
+{
+  "name": "react-ts-projectone",
+  "version": "1.0.0",
+  "description": "第一个react项目，react+ typescript",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npm run lint-eslint && npm run lint-stylelint",
+    "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src",
+    "lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss}",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liaoxinlovelance/react-ts-projectOne.git",
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged",
+        "commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+      }
+    },
+    "lint-staged": {
+      "*.{ts,tsx,js}": [
+        "eslint --config .eslintrc.js"
+      ],
+      "*.{css,less,scss}": [
+        "stylelint --config .stylelintrc.js"
+      ],
+      "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+        "prettier --write"
+      ]
+    }
+  },
+  "keywords": [
+    "react-ts-projectOne"
+  ],
+  "author": {
+    "name": "liaoxin",
+    "url": "https://github.com/liaoxinlovelance/",
+    "email": "1987644314@qq.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liaoxinlovelance/react-ts-projectOne/issues"
+  },
+  "homepage": "https://github.com/liaoxinlovelance/react-ts-projectOne#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "stylelint-order": "^5.0.0",
+    "typescript": "^4.5.2"
+  }
+}
